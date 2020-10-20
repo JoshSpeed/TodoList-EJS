@@ -11,25 +11,34 @@
     <title>To Do List</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <h1>The date is <%= kindOfDay %></h1>
+    <div class="box" id="heading">
+        <h1><%= kindOfDay %></h1>
+    </div>
 
-    <ul>
+
+    <div class="box">
+
 
         <% for (var i = 0; i < newListItems.length; i++){ %>
-        <li><%= newListItems[i] %></li>
+        <div class="item">
+            <input type="checkbox">
+            <p><%= newListItems[i] %></p>
+        </div>
         <% } %>
 
-    </ul>
-    <form action="/" method="post">
+        <form action="/" method="post" class="item">
 
-        <input type="text" name="newItem">
-        <button type="submit" name="button">Add</button>
-    </form>
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="button">+</button>
+        </form>
+
+
+    </div>
 
     <script src="" async defer></script>
 </body>
